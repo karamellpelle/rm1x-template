@@ -1,0 +1,78 @@
+E-1     -                  
+F-1     -                  
+F#-1    -                  
+G-1     -                  
+G#-1    -                  
+A-1     -                  
+A#-1    -                  
+B-1     -                  
+C0      -                  
+C#0     -                  
+D0      -                  
+D#0     BD Ana Tight       
+E0      BD Analog Comp     
+F0      BD Analog Deep     
+F#0     BD Ana Hard 2      
+G0      BD Ana Hard 1      
+G#0     BD Analog Blip     
+A0      BD Ana Rubber      
+A#0     BD Ana Loose       
+B0      BD Synth 1         
+C1      BD Synth 2         
+C#1     BD Analog Dist     
+D1      Ripper             
+D#1     BDAnaSoft2L        
+E1      BD Ana Soft 2H     
+F1      BD Ana Soft1 Short 
+F#1     BD Ana Soft 1 Long 
+G1      BD Dry Soft        
+G#1     BD Dry             
+A1      BD Tight           
+A#1     BD Soft            
+B1      BD Room            
+C2      BD Break 2         
+C#2     BD Break 1         
+D2      BD & HH Open H     
+D#2     BD Break 4         
+E2      BD Break 3         
+F2      BD Break 5         
+F#2     BD Break 6         
+G2      BD Break 7         
+G#2     Big Drum           
+A2      Taiko Drum         
+A#2     Surdo Open         
+B2      Feet               
+C3      BD Industrial      
+C#3     Door Slam          
+D3      Punch              
+D#3     Heart              
+E3      -                  
+F3      -                  
+F#3     -                  
+G3      -                  
+G#3     -                  
+A3      -                  
+A#3     -                  
+B3      -                  
+C4      -                  
+C#4     -                  
+D4      -                  
+D#4     -                  
+E4      -                  
+F4      -                  
+F#4     -                  
+G4      -                  
+G#4     -                  
+A4      -                  
+A#4     -                  
+B4      -                  
+C5      -                  
+C#5     -                  
+D5      -                  
+D#5     -                  
+E5      -                  
+F5      -                  
+F#5     -                  
+G5      -                  
+G#5     -                  
+A5      -                  
