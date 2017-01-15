@@ -7,14 +7,14 @@ A-1     Brush Swirl
 A#-1    Reverse Hi-Hat     
 B-1     BD Ana Soft 1 Long 
 C0      Heart              
-C#0     HiQ2               
+C#0     Hi Q 2               
 D0      Brush Slap         
-D#0     HiQ1               
+D#0     Hi Q 1               
 E0      Snare Analog 5     
 F0      Tom Brush 1        
 F#0     HH Cl Syn          
 G0      Tom Brush 2        
-G#0     HHClSE             
+G#0     HH Cl SE             
 A0      Tom Brush 3        
 A#0     HH Op Syn          
 B0      BD Ana Soft 2      
@@ -28,7 +28,7 @@ F#1     HH Cl Ana 1 H
 G1      Tom Ana Clean 2    
 G#1     HH OpAna1 ShortH   
 A1      Tom Ana Clean 3    
-A#1     HHOpAna1H          
+A#1     HH Op Ana 1 H          
 B1      Tom Ana Clean 4    
 C2      Tom Ana Clean 5    
 C#2     Cymbal Synth 1     

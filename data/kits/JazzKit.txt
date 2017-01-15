@@ -23,16 +23,16 @@ C#1     Side Stick
 D1      Snare Dry       
 D#1     Hand Clap Small 
 E1      Snare Rim       
-F1      TomSoft1        
+F1      Tom Soft 1      
 F#1     HH Cl Tight     
-G1      TomSoft2        
+G1      Tom Soft 2      
 G#1     Hi-Hat Pedal    
-A1      TomSoft3        
+A1      Tom Soft 3      
 A#1     Hi-Hat Open     
-B1      TomSoft4        
-C2      TomSoft5        
+B1      Tom Soft 4      
+C2      Tom Soft 5      
 C#2     Crash Cymbal 1  
-D2      TomSoft6        
+D2      Tom Soft 6      
 D#2     Ride Cymbal 1   
 E2      Chinese Cymbal  
 F2      Ride Cymbal Cup 

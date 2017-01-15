@@ -11,7 +11,7 @@ C#0     , Side Stick         , Side Stick Ana 3  , Hi Q 2             , Side Sti
 D0      , Snare Break 6      , Snare Analog 5    , Brush Slap         , Snare Break 4      , Snare Break 4    , Snare Break 3    , Snare Break 6    , Snare Break 9    ,
 D#0     , Hand Clap Small    , Hand Clap Ana     , Hi Q 1             , Snare Clap         , Hand Clap Ana    , Hand Clap Small  , Hand Clap Synth  , Hand Clap Small  ,
 E0      , Snare Analog 4     , Snare Analog 1    , Snare Analog 5     , Snare Analog 2     , Snare Analog 2   , Snare Break 4    , Snare Rim        , Snare Break 4    ,
-F0      , Tom Ana Clean 1    , Tom Analog 1      , Tom Brush 1        , Tom Industrial 1   , Tom Ana Clean 1  , Tom Hard 1       , Tom Hard 1       , TomSoft1         ,
+F0      , Tom Ana Clean 1    , Tom Analog 1      , Tom Brush 1        , Tom Industrial 1   , Tom Ana Clean 1  , Tom Hard 1       , Tom Hard 1       , Tom Soft 1       ,
 F#0     , HH Cl Syn          , HH Cl Hard        , HH Cl Syn          , Hi-Hat Closed      , HH Cl Tight      , Hi-Hat Closed    , HH Cl Break      , Hi-Hat Closed    ,
 G0      , Tom Ana Clean 2    , Tom Analog 2      , Tom Brush 2        , Tom Industrial 2   , Tom Ana Clean 2  , Tom Hard 2       , Tom Hard 2       , Tom Soft 2       ,
 G#0     , Hi-Hat Closed      , HH Op Hard Short  , HH Cl SE           , Hi-Hat Pedal       , Hi-Hat Pedal     , Hi-Hat Pedal     , HH Pedal Break 1 , Hi-Hat Pedal     ,

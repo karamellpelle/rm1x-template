@@ -51,7 +51,7 @@ F3      Tom Hard 3
 F#3     Tom Hard 4        
 G3      Tom Hard 5        
 G#3     Tom Hard 6        
-A3      TomSoft1          
+A3      Tom Soft 1        
 A#3     Tom Soft 2        
 B3      Tom Soft 3        
 C4      Tom Soft 4        

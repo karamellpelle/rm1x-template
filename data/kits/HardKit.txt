@@ -42,8 +42,8 @@ G#2     Cowbell Analog 1
 A2      Crash Cymbal 2     
 A#2     Vibraslap          
 B2      Ride Cymbal 1      
-C3      BD&HHOpenH         
-C#3     BD&HHOpenL         
+C3      BD & HH Open H         
+C#3     BD & HH Open L         
 D3      Metal Noise H      
 D#3     Metal Noise L      
 E3      Big Drum           

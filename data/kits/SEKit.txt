@@ -57,7 +57,7 @@ B3      SFX Gun 2
 C4      SFX Gun 1        
 C#4     Scratch 2        
 D4      Scratch 3        
-D#4     Hi Q1 H          
+D#4     Hi Q 1 H          
 E4      Hi Q 1 L         
 F4      Hi Q 2           
 F#4     Scratch 1 H      

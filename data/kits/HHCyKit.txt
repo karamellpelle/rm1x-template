@@ -12,9 +12,9 @@ D0      -
 D#0     HH Cl Hard         
 E0      HH Op Hard Short   
 F0      HH Op Hard         
-F#0     HHClHardH          
+F#0     HH Cl Hard H          
 G0      HH Op Hard ShortH  
-G#0     HHOpHardH          
+G#0     HH Op Hard H          
 A0      HH Cl Ana 1        
 A#0     HH Cl Ana 1 H      
 B0      HH OpAna1 ShortQ   
@@ -29,7 +29,7 @@ G1      HH Op Syn H
 G#1     HH Cl Syn          
 A1      HH Op Syn Short    
 A#1     HH Op Syn          
-B1      HHClSE             
+B1      HH Cl SE             
 C2      HH Op SE Short     
 C#2     HH Op SE           
 D2      Hi-Hat Closed      

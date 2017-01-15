@@ -48,8 +48,8 @@ D3      Applause
 D#3     BrthNoiz  
 E3      Gunshot   
 F3      Bomb      
-F#3     HiQ 1     
-G3      HiQ 2     
+F#3     Hi Q 1     
+G3      Hi Q 2     
 G#3     SFX Gun1  
 A3      SFX Gun2  
 A#3     BrstNoiz  

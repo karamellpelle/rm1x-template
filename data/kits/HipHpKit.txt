@@ -47,8 +47,8 @@ C#3     Bongo L
 D3      Conga H Mute     
 D#3     Conga H Open     
 E3      Conga L          
-F3      BD&HHOpenH       
-F#3     BD&HHOpenL       
+F3      BD & HH Open H       
+F#3     BD & HH Open L       
 G3      Agogo H          
 G#3     Agogo L          
 A3      Cabasa           

@@ -11,11 +11,11 @@ C#0     Side Stick
 D0      Snare Break 4    
 D#0     Snare Clap       
 E0      Snare Break 2    
-F0      TomSoft1         
+F0      Tom Soft 1       
 F#0     HH Cl Break      
-G0      TomSoft2         
+G0      Tom Soft 2       
 G#0     HH Pedal Break 1 
-A0      TomSoft3         
+A0      Tom Soft 3       
 A#0     HH Op Break      
 B0      Big Drum         
 C1      BD Tight         
@@ -47,8 +47,8 @@ C#3     Bongo L
 D3      Conga H Mute     
 D#3     Conga H Open     
 E3      Conga L          
-F3      BD&HHOpenH       
-F#3     BD&HHOpenL       
+F3      BD & HH Open H       
+F#3     BD & HH Open L       
 G3      Agogo H          
 G#3     Agogo L          
 A3      Cabasa           

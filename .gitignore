@@ -4,3 +4,7 @@
 gmon.out
 session.vim
 tmp
+dist
+rm1x-template
+*.hi
+*.o
