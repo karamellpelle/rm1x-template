@@ -67,12 +67,3 @@ A4      Triangle Open
 A#4     Shaker          
 B4      Jingle Bell     
 C5      Bell Tree       
-C#5     -               
-D5      -               
-D#5     -               
-E5      -               
-F5      -               
-F#5     -               
-G5      -               
-G#5     -               
-A5      -               

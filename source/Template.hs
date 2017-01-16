@@ -17,7 +17,10 @@
 --
 module Template
   (
-    midiMap
+    StringMap,
+    midiMap,
+    templateMap,
+    addField,
   ) where
 
 
@@ -25,14 +28,27 @@ import Data.List
 import Data.String
 
 
-midiMap :: FilePath -> IO [(String, String)]
+type StringMap = [(String, String)]
+
+
+midiMap :: FilePath -> IO StringMap
 midiMap path =
     readFile path >>= \file ->
         return $ makeMap $ lines file
-
     where
-        makeMap ls = foldr step [] ls
-        step line xs =
-            case words line of 
-                (w0:ws@(w1:ws2)) -> (w0, unwords ws) : xs   -- line has at least 2 words
-                _                -> xs                      -- do nothing and keep rollin'
+      makeMap ls = foldr step [] ls
+      step line xs =
+        case words line of 
+            (w0:ws@(w1:ws2)) -> (w0, unwords ws) : xs   -- line has at least 2 words
+            _                -> xs                      -- do nothing and keep rollin'
+
+
+templateMap :: StringMap -> StringMap
+templateMap =
+    fmap (\(key, name) -> ("___" ++ key, name))
+
+-- | add name to a template map
+addField :: StringMap -> String -> String -> StringMap
+addField map key name =
+    (key, name) : map
+
