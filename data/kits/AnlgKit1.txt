@@ -14,7 +14,7 @@ E0      Snare Ana Gate
 F0      Tom Ana Dist 1    
 F#0     HH Cl Hard H      
 G0      Tom Ana Dist 2    
-G#0     HH Op Hard ShortH 
+G#0     HH Op Hard Short H 
 A0      Tom Ana Dist 3    
 A#0     HH Op Hard H      
 B0      BD Analog Comp    

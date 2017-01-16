@@ -14,7 +14,7 @@ E0      Snare Analog 5 L
 F0      Tom Ana Clean 1  
 F#0     HH Cl Ana 1      
 G0      Tom Ana Clean 2  
-G#0     HH OpAna1 ShortQ 
+G#0     HH Op Ana 1 Short Q 
 A0      Tom Ana Clean 3  
 A#0     HH Op Ana 1      
 B0      BD Synth 2       

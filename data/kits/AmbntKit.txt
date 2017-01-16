@@ -26,7 +26,7 @@ E1      Snare Analog 3
 F1      Tom Ana Clean 1    
 F#1     HH Cl Ana 1 H      
 G1      Tom Ana Clean 2    
-G#1     HH OpAna1 ShortH   
+G#1     HH Op Ana 1 Short H   
 A1      Tom Ana Clean 3    
 A#1     HH Op Ana 1 H          
 B1      Tom Ana Clean 4    

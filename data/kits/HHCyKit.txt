@@ -13,11 +13,11 @@ D#0     HH Cl Hard
 E0      HH Op Hard Short   
 F0      HH Op Hard         
 F#0     HH Cl Hard H          
-G0      HH Op Hard ShortH  
+G0      HH Op Hard Short H  
 G#0     HH Op Hard H          
 A0      HH Cl Ana 1        
 A#0     HH Cl Ana 1 H      
-B0      HH OpAna1 ShortQ   
+B0      HH Op Ana 1 Short Q   
 C1      HH Op Ana 1 Short  
 C#1     HH Op Ana 1        
 D1      HH Cl Ana 2        

@@ -50,8 +50,8 @@ E3      Gunshot
 F3      Bomb      
 F#3     Hi Q 1     
 G3      Hi Q 2     
-G#3     SFX Gun1  
-A3      SFX Gun2  
+G#3     SFX Gun 1  
+A3      SFX Gun 2  
 A#3     BrstNoiz  
 B3      Ripper    
 C4      -         
