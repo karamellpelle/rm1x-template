@@ -71,7 +71,8 @@ main = do
 getDataFileName' :: FilePath -> IO FilePath
 getDataFileName' path =
     return $ "data/" ++ path
-    -- TODO: look if it exist!
+    -- ^TODO: use 'getDataFileName' and see if file exist, 
+    --        otherwise use the one in 'data/'
 
 --------------------------------------------------------------------------------
 --  
