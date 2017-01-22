@@ -47,14 +47,14 @@ main = do
 
     -- mainSVG
     case svg of 
-        Just []       -> die "No kit input file given."
+        Just []       -> die "No kit input file."
         Just [path]   -> mainSVG path
         Just _        -> die "Command takes only 1 argument."
         Nothing       -> return ()
 
     -- mainSVGPages
     case svgpages of 
-        Just []       -> die "No kit input file given."
+        Just []       -> die "No kit input file."
         Just [path]   -> mainSVGPages path
         Just _        -> die "Command takes only 1 argument."
         Nothing       -> return ()
@@ -106,7 +106,7 @@ mainSVGPages path = do
                Just [dir] -> doesDirectoryExist dir >>= \exist -> if exist 
                                then return dir
                                else die $ dir ++ " is not a folder."
-               _          -> return "./"
+               _          -> return ""
                                
     -- make sure we have valid input and output
     assertExist path
@@ -117,7 +117,7 @@ mainSVGPages path = do
     -- make file
     makeSVGPages path dir >>= \res -> case res of
         Just (SVGPages name svg0 svg1 svg2) -> 
-            putStrLn $ name ++ " (" ++ svg0 ++ "/" ++ svg1 ++ "/" ++ svg2 ++ ") written."
+            putStrLn $ name ++ " (" ++ svg0 ++ " / " ++ svg1 ++ " / " ++ svg2 ++ ") written."
         Nothing                             -> 
             putStrLn $ "Error: Could not make svg pages."
 

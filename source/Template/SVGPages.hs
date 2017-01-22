@@ -70,8 +70,8 @@ makeSVGPages kit dir = do
           die "Error: Could not understand svg/xml!"
 
       visibly :: String -> Content -> Content
-      visibly label (Elem element) = 
-          undefined
+      visibly label cont@(Elem element) = 
+          cont
           -- * find Element with Attribute 'inkscape:label' == label
           -- * change this Element's Attribute 'style' from 'display:none' to 'display:inline'
       visibly label cont =
