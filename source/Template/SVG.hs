@@ -15,19 +15,41 @@
 --    with this program; if not, write to the Free Software Foundation, Inc.,
 --    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 --
-module Template
+module Template.SVG
   (
-    module Template.Types,
-    module Template.SVG,
-    module Template.SVGPages,
-    module Template.Book,
-    module Template.File,
+    SVG (..),
+    makeSVG,
 
   ) where
 
 import Template.Types
-import Template.SVG
-import Template.SVGPages
-import Template.Book
 import Template.File
+import Helpers
+--import Text.XML.Simple
+
+data SVG =
+    SVG
+    {
+        svgName :: String,
+        svgPath :: FilePath
+    }
+
+makeSVG :: FilePath -> FilePath -> IO (Maybe SVG)
+makeSVG kit path = do
+    tm <- readTemplateMap kit
+
+    template <- getDataFileName' "template.svg"
+
+    -- TODO
+    -- * for each element in template map, find the xml element having this as 'id' attribute
+    -- * replace this elements text
+    -- for now, just replace 
+
+    fileMapWords (stringmap tm) template path
+
+    return $ Just $ SVG (takeBaseName kit) path
+
+    where 
+      stringmap (TemplateMap name sm) =
+          ("___NAME", name) : sm
 

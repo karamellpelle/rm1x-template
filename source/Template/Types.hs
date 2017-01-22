@@ -15,19 +15,25 @@
 --    with this program; if not, write to the Free Software Foundation, Inc.,
 --    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 --
-module Template
+module Template.Types 
   (
-    module Template.Types,
-    module Template.SVG,
-    module Template.SVGPages,
-    module Template.Book,
-    module Template.File,
+    StringMap (..),
+    MidiMap (..),
+    TemplateMap (..),
 
   ) where
 
-import Template.Types
-import Template.SVG
-import Template.SVGPages
-import Template.Book
-import Template.File
+
+-- | String -> String
+type StringMap = 
+    [(String, String)]
+
+-- | midi (?) notes to name
+data MidiMap =
+    MidiMap StringMap
+
+-- | map names in svg template to name
+data TemplateMap =
+    TemplateMap String StringMap
+
 

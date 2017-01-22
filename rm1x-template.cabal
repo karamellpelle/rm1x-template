@@ -13,7 +13,7 @@ name:                rm1x-template
 version:             0.1.0.0
 
 -- A short (one-line) description of the package.
-synopsis:            Keymap for Yamaha Rm1x
+synopsis:            Drum keymaps for Yamaha Rm1x
 
 -- A longer description of the package.
 -- description:         
@@ -50,6 +50,12 @@ executable rm1x-template
   -- Modules included in this executable, other than Main.
   -- other-modules:       
   other-modules:       Template
+                       Template.Types
+                       Template.File
+                       Template.SVG
+                       Template.SVGPages
+                       Template.Book
+                       Helpers
                        
                        
   
@@ -59,8 +65,10 @@ executable rm1x-template
   -- Other library packages from which modules are imported.
   build-depends:       base >=4.9 && <4.10,
                        directory,
-                       bytestring,
+                       process,
                        filepath
+                       --xml,
+                       --temporary,
   
   -- Directories containing source files.
   hs-source-dirs:      source
@@ -75,6 +83,4 @@ executable rm1x-template
                        -fno-warn-unused-do-bind 
                        -fno-warn-missing-signatures 
                        -fno-warn-unused-imports
-
-  other-modules:       Template
 

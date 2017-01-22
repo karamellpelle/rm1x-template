@@ -17,133 +17,134 @@
 --
 module Main where
 
-import System.IO
-import System.Environment
-import System.Directory
-import System.FilePath
-import System.Exit
-import Control.Monad
-import Data.Char
-import qualified Data.ByteString.Char8 as BS
+import Helpers
 import Template
+
+
+--------------------------------------------------------------------------------
+--  
+
+mainHelp :: IO ()
+mainHelp = do
+    putStrLn "Usage:"
+    putStrLn "rm1x-template --svg kit.txt [--output file|folder]"
+    putStrLn "rm1x-template --svg-pages kit.txt [--output folder]"
+    putStrLn "rm1x-template --book kit1.txt ... kitN.txt [--output file|folder]"
+
+
+--------------------------------------------------------------------------------
+--  main
 
 main :: IO ()
 main = do
-    template <- getDataFileName' "template.svg"
-   
-    path  <- getOption "input"
-    path' <- getOption "output" >>= \path' ->
-        doesDirectoryExist path' >>= \is -> if is 
-            then return $ path' </> takeBaseName path <.> "svg"
-            else return $ dropExtension path' <.> "svg"
-    
-    -- make sure we have an actual input file
-    doesFileExist path >>= \exist -> when (not exist) $ die "Error: Input file does not exist!"
 
-    -- make sure we don't overwrite unintentionally
-    doesFileExist path' >>= \exist -> when exist $ do
-        putStr $ "Overwrite " ++ path ++ "? (y/N) "
+    help      <- getOption "help"
+    svg       <- getOption "svg"
+    svgpages  <- getOption "svg-pages"
+    book      <- getOption "book"
+
+    when ( isJust help || (isNothing svg && isNothing svgpages && isNothing book) ) $ mainHelp
+
+    case svg of 
+        Just []       -> die "No kit input file given."
+        Just [path]   -> mainSVG path
+        Just _        -> die "Command takes only 1 argument."
+        Nothing       -> return ()
+
+    when (isJust svgpages)  $ mainSVGPages (fromJust svgpages)
+    when (isJust book)      $ mainBook (fromJust book)
+
+
+
+--------------------------------------------------------------------------------
+--  
+
+
+-- | create svg image
+mainSVG :: String -> IO ()
+mainSVG path = do
+
+    output  <- getOption "output"
+    path'   <- case output of
+               Just [path'] -> doesDirectoryExist path' >>= \exist -> if exist 
+                               then return $ path' </> takeBaseName path <.> "svg"
+                               else return path'
+
+               _            -> return $ takeBaseName path <.> "svg"
+                               
+                               
+    
+    -- make sure we have valid input and output
+    assertExist path
+    assertOverwrite path'
+
+    -- make file
+    makeSVG path path' >>= \res -> case res of
+        Just (SVG name svg) -> putStrLn $ name ++ " (" ++ svg ++ ") written."
+        Nothing             -> putStrLn $ "Error: Could not make SVG."
+              
+
+
+mainSVGPages :: [String] -> IO ()
+mainSVGPages args = do
+    undefined
+
+mainBook :: [String] -> IO ()
+mainBook args = do
+    undefined
+
+
+--------------------------------------------------------------------------------
+--  
+
+-- | make sure we have an actual input file
+assertExist :: FilePath -> IO ()
+assertExist path = do
+    exist <- doesFileExist path 
+    when (not exist) $ die $ "Error: Input file " ++ path ++ " does not exist!"
+
+
+-- | make sure we don't overwrite unintentionally
+assertOverwrite :: FilePath -> IO ()
+assertOverwrite path = do
+    exist <- doesFileExist path
+    when exist $ yesno ("Overwrite " ++ path ++ "? (y/n) ")
+                 (return ()) 
+                 (putStrLn "Cancelled." >> exitSuccess)
+
+    where
+      yesno str y n = do
+        putStr str
         hFlush stdout
-        getLine >>= \a -> 
-            case a of 
-                ('y':_)  -> return ()
-                ('Y':_)  -> return ()
-                _        -> putStrLn "Cancelled." >> exitSuccess
+        getLine >>= \a -> case a of 
+            ('y':_)  -> y
+            ('Y':_)  -> y
+            ('n':_)  -> n
+            ('N':_)  -> n
+            _        -> yesno str y n
 
-
-    -- read map from file
-    -- TODO: catch exception
-    tmap <- fmap templateMap $ midiMap path
-                    
-    putStr $ "Writing file " ++ path' ++ "..."
-    hFlush stdout
-    
-    -- now write file
-    replaceTemplate template tmap path path'
-
-    putStrLn "OK"
-          
-
+      
 
 --------------------------------------------------------------------------------
 --  
 
-getDataFileName' :: FilePath -> IO FilePath
-getDataFileName' path =
-    return $ "data/" ++ path
-    -- ^TODO: use 'getDataFileName' and see if file exist, 
-    --        otherwise use the one in 'data/'
-
---------------------------------------------------------------------------------
---  
-
-getOption :: String -> IO String
+getOption :: String -> IO (Maybe [String])
 getOption opt = do
     args <- getArgs
-    case find args opt of 
-        Nothing     -> die $ "Error: No --" ++ opt ++ " option given"
-        Just ""     -> die $ "Error: Empty --" ++ opt ++ " option"
-        Just str    -> return str
+    case dropWhile (/= ("--" ++ opt)) args of
+        []    -> return Nothing
+        as    -> return $ Just $ takeWhile (not . isCommand) $ tail as
 
     where
-      find [] opt     = Nothing
-      find (a:as) opt =
-          if ( "--" ++ opt == a )
-            then case as of 
-                    (a':as') -> Just a'
-                    _        -> Just ""
-            else find as opt
+      isCommand ('-':'-':c:_) = True
+      isCommand _             = False
 
+getFlag :: String -> IO Bool
+getFlag opt =
+    getOption opt >>= \maybe -> case maybe of
+        Just []   -> return True
+        _         -> return False
 
-
---------------------------------------------------------------------------------
---  
-
-replaceTemplate :: FilePath -> StringMap -> FilePath -> FilePath -> IO ()
-replaceTemplate template tmap input output = do
-
-    withFile template ReadMode $ \h -> do
-        
-        -- create buffer file
-        dir <- getTemporaryDirectory
-        (tmp, h') <- openTempFile dir $ takeFileName output
-        
-        --putStrLn ""
-        --putStrLn $ "input: " ++ input
-        --putStrLn $ "output: " ++ output
-        --putStrLn $ "temp: " ++ tmp
-
-        let tmap' = addField tmap "___NAME" $ takeBaseName input
-        --forM_ (take 20 map') $ \(x, y) -> putStrLn $ x ++ " -> " ++ y
-
-        -- now go through 'input' and replace each occurence of words in the map
-        -- (we assume xml do not use these names for anything else)
-        str <- BS.hGetContents h 
-        mapM_ (BS.hPut h') $ map (replace tmap') $ split str
-
-        hClose h'
-        
-        -- now copy temporary file to its destination
-        copyFile tmp output
-
-    where
-      split = 
-          BS.groupBy (\c0 c1 -> pred c0 == pred c1)
-      pred c = 
-          isAlphaNum c || c == '-' || c == '_' || c == '#'
-          
-      replace tmap w =
-          if isReplaceable w then helper tmap w
-                             else w
-      helper ((x, x') : xs) w =
-          if BS.pack x == w then BS.pack x'
-                            else helper xs w
-      helper [] w = 
-          BS.pack "" -- no mapping for this replacable word
-      isReplaceable bs = 
-          case BS.unpack bs of
-              ('_':'_':'_':c:cs) -> True
-              _                  -> False
 
 
 
