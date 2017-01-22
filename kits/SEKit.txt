@@ -1,0 +1,69 @@
+E-1     Rev Low Noise    
+F-1     Rev Syn Cymbal 1 
+F#-1    Reverse Cymbal   
+G-1     Reverse Roll     
+G#-1    Reverse Snare    
+A-1     Helicopter       
+A#-1    Reverse Hi-Hat   
+B-1     Big Drum         
+C0      Punch            
+C#0     Side Stick Ana 4 
+D0      Metal Noise      
+D#0     Hand Clap Synth  
+E0      Snare Synth 3    
+F0      Tom Ana Dist 1   
+F#0     HH Cl Syn        
+G0      Tom Ana Dist 2   
+G#0     HH Op Syn Short  
+A0      Tom Ana Dist 3   
+A#0     HH Op Syn        
+B0      Door Slam        
+C1      BD Industrial    
+C#1     Metal Noise      
+D1      Snare Noise Dist 
+D#1     Noiseburst       
+E1      Snare Synth 4    
+F1      Tom Industrial 1 
+F#1     HH Cl SE         
+G1      Tom Industrial 2 
+G#1     HH Op SE Short   
+A1      Tom Industrial 3 
+A#1     HH Op SE         
+B1      Tom Industrial 4 
+C2      Tom Industrial 5 
+C#2     Cymbal Synth 1   
+D2      Tom Industrial 6 
+D#2     Ride Hard        
+E2      Rev Syn Cymbal 2 
+F2      Metal Noise      
+F#2     Tambourine Ana   
+G2      Gunshot          
+G#2     Cowbell Analog 2 
+A2      Bomb             
+A#2     Vibraslap Analog 
+B2      Cymbal Synth 1 L 
+C3      Bongo Analog H   
+C#3     Bongo Analog L   
+D3      Conga Analog 1   
+D#3     Conga Analog 2   
+E3      Conga Analog 3   
+F3      Meatal Analog H  
+F#3     Meatal Analog L  
+G3      Glass Noize H    
+G#3     Glass Noize L    
+A3      Hand Clap Synth  
+A#3     Maracas          
+B3      SFX Gun 2        
+C4      SFX Gun 1        
+C#4     Scratch 2        
+D4      Scratch 3        
+D#4     Hi Q 1 H          
+E4      Hi Q 1 L         
+F4      Hi Q 2           
+F#4     Scratch 1 H      
+G4      Scratch 1 L      
+G#4     HH Cl SE H       
+A4      HH Op SE H       
+A#4     Shaker Analog    
+B4      Vibraslap Synth  
+C5      Tape Rewind      

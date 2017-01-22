@@ -1,0 +1,60 @@
+D#0     Snare Analog 1     
+E0      Snare Analog 2     
+F0      Snare Analog 2 Q   
+F#0     Snare Ana Gate     
+G0      Snare Synth 1      
+G#0     Snare Synth 2      
+A0      Snare Synth 3      
+A#0     Snare Synth 4      
+B0      Snare Ana Dist     
+C1      Snare Noise Dist   
+C#1     Metal Noise        
+D1      Snare Analog 3 L   
+D#1     Snare Analog 3     
+E1      Snare Analog 4     
+F1      Snare Analog 5 L   
+F#1     Snare Analog 5     
+G1      Snare Analog 6     
+G#1     Snare Clap         
+A1      Snare Hard         
+A#1     Snare Power        
+B1      Snare Dry          
+C2      Snare Rim          
+C#2     Snare Break 1      
+D2      Snare Break 2      
+D#2     Snare Break 3      
+E2      Snare Roll Break   
+F2      Snare Break 6      
+F#2     Snare Break 4      
+G2      Snare Break 5      
+G#2     Snare Break 7      
+A2      Snare Break 8      
+A#2     Snare Break 9      
+B2      Snare Break 10     
+C3      Snare Roll         
+C#3     Reverse Roll       
+D3      Reverse Snare      
+D#3     Revers Noise       
+E3      Brush Tap L        
+F3      Brush Tap          
+F#3     Brush Slap L       
+G3      Brush Slap         
+G#3     Brush Swirl Long   
+A3      Brush Swirl Short  
+A#3     Side Stick Ana 3   
+B3      Side Stick Ana 3 Q 
+C4      Side Stick Ana 4   
+C#4     Metal Noise        
+D4      Side Stick Ana 1   
+D#4     Side Stick Ana 2   
+E4      Side Stick         
+F4      Snare Rim          
+F#4     Log Drum           
+G4      Shekere 2          
+G#4     Hand Clap Ana      
+A4      Hand Clap Ana Q    
+A#4     Hand Clap Synth    
+B4      Noiseburst         
+C5      Hand Clap Small    
+C#5     Hand Clap Large    
+D5      Finger Snap        

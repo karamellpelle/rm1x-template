@@ -1,0 +1,45 @@
+D#0     Shower    
+E0      Thunder   
+F0      Wind      
+F#0     Seashore  
+G0      Steam     
+G#0     Bubble    
+A0      Dog       
+A#0     Horse     
+B0      Tweet 1   
+C1      Tweet 2   
+C#1     Growl     
+D1      DoorSqek  
+D#1     DoorSlam  
+E1      Telphon1  
+F1      Telphon2  
+F#1     Scratch   
+G1      TurnTabl  
+G#1     TapeRwnd  
+A1      GlasNoiz  
+A#1     MetalNz1  
+B1      MetalNz2  
+C2      IndstTom  
+C#2     CarEIgn   
+D2      CarTSqel  
+D#2     Car Pass  
+E2      CarCrash  
+F2      Train     
+F#2     Helicptr  
+G2      RevBurst  
+G#2     RevLowNz  
+A2      Laugh     
+A#2     Scream    
+B2      Punch     
+C3      Heart     
+C#3     Footstep  
+D3      Applause  
+D#3     BrthNoiz  
+E3      Gunshot   
+F3      Bomb      
+F#3     Hi Q 1     
+G3      Hi Q 2     
+G#3     SFX Gun 1  
+A3      SFX Gun 2  
+A#3     BrstNoiz  
+B3      Ripper    

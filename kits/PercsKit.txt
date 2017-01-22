@@ -1,0 +1,69 @@
+E-1     Digeridoo 3 Short 
+F-1     Digeridoo 3 Long  
+F#-1    Gong 1            
+G-1     Digeridoo 2       
+G#-1    Side Stick        
+A-1     Digeridoo 1       
+A#-1    Sticks            
+B-1     Big Drum          
+C0      Surdo Open        
+C#0     Castanet          
+D0      Surdo Mute        
+D#0     Hand Clap Large   
+E0      Djembe Mute       
+F0      Djembe Open L     
+F#0     Triangle Mute     
+G0      Djembe Open H     
+G#0     Triangle Op Short 
+A0      Djembe Edge       
+A#0     Triangle Open     
+B0      Taiko Drum        
+C1      Feet              
+C#1     Log Drum          
+D1      Shekere 3         
+D#1     Shekere 2         
+E1      Shekere 1         
+F1      Tabla Open        
+F#1     Maracas Analog    
+G1      Tabla Mute        
+G#1     Shaker Analog     
+A1      Tabla Nah         
+A#1     Cabasa            
+B1      Udu Low           
+C2      Udu High          
+C#2     Finger Cymbal 1   
+D2      Udu Finger        
+D#2     Berimbau 2        
+E2      Gong 2            
+F2      Berimbau 1        
+F#2     Tambourine        
+G2      Gong 3            
+G#2     Cowbell           
+A2      Wind Chime        
+A#2     Vibraslap         
+B2      Finger Cymbal 2   
+C3      Bongo H           
+C#3     Bongo L           
+D3      Conga H Mute      
+D#3     Conga H Open      
+E3      Conga L           
+F3      Timbale H         
+F#3     Timbale L         
+G3      Agogo H           
+G#3     Agogo L           
+A3      Cabasa            
+A#3     Maracas           
+B3      Samba Whistle H   
+C4      Samba Whistle L   
+C#4     Guiro Short       
+D4      Guiro Long        
+D#4     Claves            
+E4      Wood Block H      
+F4      Wood Block L      
+F#4     Cuica Mute        
+G4      Cuica Open        
+G#4     Triangle Mute     
+A4      Triangle Open     
+A#4     Shaker            
+B4      Jingle Bell       
+C5      Bell Tree         

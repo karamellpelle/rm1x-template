@@ -1,0 +1,69 @@
+E-1     Rev Low Noise    
+F-1     Rev Syn Cymbal   
+F#-1    Reverse Cymbal   
+G-1     Reverse Roll     
+G#-1    Reverse Snare    
+A-1     Snare Break 10   
+A#-1    Reverse Hi-Hat   
+B-1     BD Soft          
+C0      BD Break 3       
+C#0     Side Stick       
+D0      Snare Break 9    
+D#0     Hand Clap Small  
+E0      Snare Break 4    
+F0      Tom Soft 1       
+F#0     Hi-Hat Closed    
+G0      Tom Soft 2       
+G#0     Hi-Hat Pedal     
+A0      Tom Soft 3       
+A#0     Hi-Hat Open      
+B0      BD Break 6       
+C1      BD Break 7       
+C#1     Snare Rim        
+D1      Snare Break 7    
+D#1     Noiseburst       
+E1      Snare Break 8    
+F1      Tom Hard 1       
+F#1     HH Cl Tight H    
+G1      Tom Hard 2       
+G#1     HH Pedal Break 2 
+A1      Tom Hard 3       
+A#1     HH Op Break      
+B1      Tom Hard 4       
+C2      Tom Hard 5       
+C#2     Crash Cymbal 1   
+D2      Tom Hard 6       
+D#2     Ride Cymbal 1    
+E2      Chinese Cymbal   
+F2      Ride Cymbal Cup  
+F#2     Tambourine       
+G2      Splash Cymbal    
+G#2     Cowbell          
+A2      Crash Cymbal 2   
+A#2     Vibraslap        
+B2      Ride Cymbal 2    
+C3      Bongo H          
+C#3     Bongo L          
+D3      Conga H Mute     
+D#3     Conga H Open     
+E3      Conga L          
+F3      Tabla Nah        
+F#3     Tabla Open       
+G3      Agogo H          
+G#3     Agogo L          
+A3      Cabasa           
+A#3     Maracas          
+B3      Sonar H          
+C4      Sonar L          
+C#4     Vox Bell H       
+D4      Vox Bell L       
+D#4     Claves           
+E4      Wood Block H     
+F4      Wood Block L     
+F#4     Cuica Mute       
+G4      Cuica Open       
+G#4     Triangle Mute    
+A4      Triangle Open    
+A#4     Shaker           
+B4      Jingle Bell      
+C5      Bell Tree        
