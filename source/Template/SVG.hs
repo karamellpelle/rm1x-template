@@ -22,10 +22,10 @@ module Template.SVG
 
   ) where
 
-import Template.Types
+import Template.Map
 import Template.File
 import Helpers
---import Text.XML.Simple
+import Text.XML.Light
 
 data SVG =
     SVG
@@ -34,6 +34,8 @@ data SVG =
         svgPath :: FilePath
     }
 
+
+-- | 
 makeSVG :: FilePath -> FilePath -> IO (Maybe SVG)
 makeSVG kit path = do
     tm <- readTemplateMap kit
@@ -43,13 +45,12 @@ makeSVG kit path = do
     -- TODO
     -- * for each element in template map, find the xml element having this as 'id' attribute
     -- * replace this elements text
+
     -- for now, just replace 
+    readFile template >>= \str -> 
+        writeFile path $ templatemapSVG tm str
 
-    fileMapWords (stringmap tm) template path
 
-    return $ Just $ SVG (takeBaseName kit) path
+    return $ Just $ SVG (tmName tm) path
 
-    where 
-      stringmap (TemplateMap name sm) =
-          ("___NAME", name) : sm
 

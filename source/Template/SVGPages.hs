@@ -22,47 +22,58 @@ module Template.SVGPages
 
   ) where
 
-import Template.Types
+import Template.Map
 import Template.File
 import Helpers
---import Text.XML.Simple
+import Text.XML.Light
+
 
 data SVGPages =
     SVGPages
     {
-        name :: String,
-        svg0 :: FilePath,
-        svg1 :: FilePath,
-        svg2 :: FilePath
+        svgpagesName :: String,
+        svgpagesPath0 :: FilePath,
+        svgpagesPath1 :: FilePath,
+        svgpagesPath2 :: FilePath
     }
 
 -- | make 3 svg images from kit
 makeSVGPages :: FilePath -> FilePath -> IO (Maybe SVGPages)
-makeSVGPages path path' = do
-    undefined
-    --tm <- readTemplateMap path
-    --
-    --template <- getDataFileName' "template.svg"
-    --
-    --readFile template >>= \str -> case parseXMLDoc str of
-    --    Nothing   -> return Nothing
-    --    Just xml  -> do
-    --        undefined
-{--
-    <flowRoot  transform="translate(47.115584,561.70974)"
-               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.5px;line-height:125%;font-family:'PT Mono';-inkscape-font-specification:'PT Mono Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-               id="flowRoot15741"
-               xml:space="preserve">
-          <flowRegion id="flowRegion15743">
-              <rect  style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'PT Mono';-inkscape-font-specification:'PT Mono Bold'"
-                     y="373.80042"
-                     x="0.25021923"
-                     height="50.043839"
-                     width="50.043846"
-                     id="rect15745" />
-          </flowRegion>
-          <flowPara id="flowPara15747">
-              Snare Hard
-          </flowPara>
-    </flowRoot>
---}
+makeSVGPages kit dir = do
+    tm <- readTemplateMap kit
+
+    template <- getDataFileName' "template_pages.svg"
+    
+    readFile template >>= \str -> do
+        
+        let xml = parseXML (templatemapSVG tm str)
+
+        let path0 = dir </> (takeBaseName kit ++ "_page0") <.> "svg"
+            path1 = dir </> (takeBaseName kit ++ "_page1") <.> "svg"
+            path2 = dir </> (takeBaseName kit ++ "_page2") <.> "svg"
+
+        -- write 3 files by modifying the root element
+        writeVisibleLayer path0 "___layer0" xml 
+        writeVisibleLayer path1 "___layer1" xml 
+        writeVisibleLayer path2 "___layer2" xml 
+        
+        return $ Just $ SVGPages (tmName tm) path0 path1 path2
+
+    where
+      writeVisibleLayer path label [prolog, pad, root, pad'] = do
+          writeFile path $
+              showContent prolog ++
+              showContent pad ++
+              showContent (visibly label root) ++ -- this is where the magic happens
+              showContent pad'
+      writeVisibleLayer path label _ = do
+          die "Error: Could not understand svg/xml!"
+
+      visibly :: String -> Content -> Content
+      visibly label (Elem element) = 
+          undefined
+          -- * find Element with Attribute 'inkscape:label' == label
+          -- * change this Element's Attribute 'style' from 'display:none' to 'display:inline'
+      visibly label cont =
+          cont -- should not happen
+

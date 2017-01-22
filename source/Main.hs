@@ -45,14 +45,26 @@ main = do
 
     when ( isJust help || (isNothing svg && isNothing svgpages && isNothing book) ) $ mainHelp
 
+    -- mainSVG
     case svg of 
         Just []       -> die "No kit input file given."
         Just [path]   -> mainSVG path
         Just _        -> die "Command takes only 1 argument."
         Nothing       -> return ()
 
-    when (isJust svgpages)  $ mainSVGPages (fromJust svgpages)
-    when (isJust book)      $ mainBook (fromJust book)
+    -- mainSVGPages
+    case svgpages of 
+        Just []       -> die "No kit input file given."
+        Just [path]   -> mainSVGPages path
+        Just _        -> die "Command takes only 1 argument."
+        Nothing       -> return ()
+
+    -- mainBook
+    case book of 
+        Just []       -> putStrLn "Warning: Creating empty book" >> mainBook []
+        Just paths    -> mainBook paths
+        Nothing       -> return ()
+
 
 
 
@@ -60,7 +72,7 @@ main = do
 --  
 
 
--- | create svg image
+-- | create svg image from kit
 mainSVG :: String -> IO ()
 mainSVG path = do
 
@@ -81,17 +93,60 @@ mainSVG path = do
     -- make file
     makeSVG path path' >>= \res -> case res of
         Just (SVG name svg) -> putStrLn $ name ++ " (" ++ svg ++ ") written."
-        Nothing             -> putStrLn $ "Error: Could not make SVG."
+        Nothing             -> putStrLn $ "Error: Could not make svg."
               
 
 
-mainSVGPages :: [String] -> IO ()
-mainSVGPages args = do
-    undefined
 
+-- | create 3 svg images in A4 from kit
+mainSVGPages :: String -> IO ()
+mainSVGPages path = do
+    output  <- getOption "output"
+    dir     <- case output of
+               Just [dir] -> doesDirectoryExist dir >>= \exist -> if exist 
+                               then return dir
+                               else die $ dir ++ " is not a folder."
+               _          -> return "./"
+                               
+    -- make sure we have valid input and output
+    assertExist path
+    forM_ ["_page0", "_page1", "_page2"] $ \end -> 
+        assertOverwrite $ dir </> (takeBaseName path ++ end) <.> "svg"
+    
+
+    -- make file
+    makeSVGPages path dir >>= \res -> case res of
+        Just (SVGPages name svg0 svg1 svg2) -> 
+            putStrLn $ name ++ " (" ++ svg0 ++ "/" ++ svg1 ++ "/" ++ svg2 ++ ") written."
+        Nothing                             -> 
+            putStrLn $ "Error: Could not make svg pages."
+
+
+
+-- | create a pdf from kits
 mainBook :: [String] -> IO ()
-mainBook args = do
-    undefined
+mainBook paths = do
+    output  <- getOption "output"
+    path'   <- case output of
+               Just [path'] -> doesDirectoryExist path' >>= \exist -> if exist 
+                               then return $ path' </> "YamahaRm1x" <.> "pdf"
+                               else return path'
+
+               _            -> return $ "YamahaRm1x" <.> "pdf"
+
+    -- make sure we have valid input and output
+    forM_ paths assertExist
+    assertOverwrite path'
+
+    -- make file
+    makeBook paths path' >>= \res -> case res of
+        Just (Book name pdf) -> putStrLn $ name ++ " (" ++ pdf ++ ") written."
+        Nothing              -> putStrLn $ "Error: Could not make book."
+              
+                               
+
+
+
 
 
 --------------------------------------------------------------------------------
@@ -101,7 +156,7 @@ mainBook args = do
 assertExist :: FilePath -> IO ()
 assertExist path = do
     exist <- doesFileExist path 
-    when (not exist) $ die $ "Error: Input file " ++ path ++ " does not exist!"
+    when (not exist) $ die $ "Error: File " ++ path ++ " does not exist!"
 
 
 -- | make sure we don't overwrite unintentionally
@@ -124,10 +179,7 @@ assertOverwrite path = do
             _        -> yesno str y n
 
       
-
---------------------------------------------------------------------------------
---  
-
+-- | 
 getOption :: String -> IO (Maybe [String])
 getOption opt = do
     args <- getArgs
@@ -139,13 +191,11 @@ getOption opt = do
       isCommand ('-':'-':c:_) = True
       isCommand _             = False
 
+
+-- | 
 getFlag :: String -> IO Bool
 getFlag opt =
     getOption opt >>= \maybe -> case maybe of
         Just []   -> return True
         _         -> return False
-
-
-
-
 

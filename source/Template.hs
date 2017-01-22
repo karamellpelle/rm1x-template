@@ -17,7 +17,7 @@
 --
 module Template
   (
-    module Template.Types,
+    module Template.Map,
     module Template.SVG,
     module Template.SVGPages,
     module Template.Book,
@@ -25,7 +25,7 @@ module Template
 
   ) where
 
-import Template.Types
+import Template.Map
 import Template.SVG
 import Template.SVGPages
 import Template.Book

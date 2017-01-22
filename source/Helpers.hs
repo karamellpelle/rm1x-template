@@ -21,7 +21,7 @@ module Helpers
 
     module System.IO,
     module System.Process,
-    --module System.IO.Temp,
+    module System.IO.Temp,
     module System.Environment,
     module System.Directory,
     module System.FilePath,
@@ -35,7 +35,7 @@ module Helpers
 
 import System.IO
 import System.Process
---import System.IO.Temp
+import System.IO.Temp
 import System.Environment
 import System.Directory
 import System.FilePath

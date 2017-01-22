@@ -50,7 +50,7 @@ executable rm1x-template
   -- Modules included in this executable, other than Main.
   -- other-modules:       
   other-modules:       Template
-                       Template.Types
+                       Template.Map
                        Template.File
                        Template.SVG
                        Template.SVGPages
@@ -66,9 +66,9 @@ executable rm1x-template
   build-depends:       base >=4.9 && <4.10,
                        directory,
                        process,
-                       filepath
-                       --xml,
-                       --temporary,
+                       filepath,
+                       xml,
+                       temporary
   
   -- Directories containing source files.
   hs-source-dirs:      source

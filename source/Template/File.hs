@@ -19,11 +19,10 @@ module Template.File
   (
     readMidiMap,
     readTemplateMap,
-    fileMapWords,
   ) where
 
 import Helpers
-import Template.Types
+import Template.Map
 
 
 -- | read mapping from tones to names
@@ -48,49 +47,8 @@ readTemplateMap path = do
     case mm of 
         MidiMap sm  -> 
             let name = takeBaseName path
-            in  return $ TemplateMap name $ map toTemplate sm
+            in  return $ TemplateMap name $ map toTemplate $ ("NAME", name) : sm
 
     where
-      toTemplate = \(a, b) -> ("___" ++ a, escape b)
-      escape :: String -> String
-      escape w =
-          (flip concatMap) w $ \c -> case c of
-              '<'   -> "&lt;"
-              '>'   -> "&gt;"
-              '&'   -> "&amp;"
-              '\''  -> "&apos;"
-              '"'   -> "&quot;"
-              c     -> [c]
-
-          -- ^ http://www.w3schools.com/XML/xml_syntax.asp
-
---------------------------------------------------------------------------------
---  fileMap
-
-
--- | make a copy with content replaced.
---   assuming path and path' are not the same file.
-fileMapWords :: StringMap -> FilePath -> FilePath -> IO FilePath
-fileMapWords sm path path' = do
-    readFile path >>= \str -> do
-        writeFile path' $ concat $ map replace $ split str
-    return path'
-
-    where
-      split = 
-          groupBy (\c0 c1 -> pred c0 == pred c1)
-      pred c = 
-          isAlphaNum c || c == '-' || c == '_' || c == '#' -- ^ this defines words
-          
-      replace w =
-          if isReplaceable w then helper sm w
-                             else w
-      helper ((x, x') : xs) w =
-          if w == x then x' else helper xs w
-      helper [] w = "" -- ^ word was replacable but without mapping
-
-      isReplaceable w = 
-          case w of
-              ('_':'_':'_':c:cs) -> True
-              _                  -> False
+      toTemplate = \(a, b) -> ("___" ++ a, b)
 

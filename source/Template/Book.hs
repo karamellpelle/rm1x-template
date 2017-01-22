@@ -22,7 +22,7 @@ module Template.Book
   ) where
 
 import Helpers
-import Template.Types
+import Template.Map
 import Template.File
 import Template.SVGPages
 
@@ -33,6 +33,8 @@ data Book =
         bookName :: String,
         bookPath :: FilePath
     }
+
+
 
 -- | make a pdf with LaTex from kit files. returns 'out' upon
 --   success
@@ -72,7 +74,7 @@ makeLatexInclude dir (SVGPages name svg0 svg1 svg2) = do
     template <- readFile =<< getDataFileName' "book/include.tex"
 
     -- use template to generate a new include file
-    fileMapWords sm template out
+    --fileMapWords sm template out
     return out
 
     where 
