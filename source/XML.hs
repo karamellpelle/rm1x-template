@@ -44,7 +44,8 @@ modifyElementIf pred f = \conts ->
             then Elem $ f elem                                                 -- no more searching; return
             else Elem $ Element name attr (modifyElementIf pred f conts) line  -- continue search
 
--- | modify. foldr
+
+-- | modify. foldr.
 mapElements :: (Element -> Element) -> [Content] -> [Content]
 mapElements f = \conts -> 
     map helper conts

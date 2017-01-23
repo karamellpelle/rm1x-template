@@ -21,8 +21,8 @@ module Template.Map
     MidiMap (..),
     TemplateMap (..),
 
-    templatemapSVG,
-    templatemapSVG',
+    templatemap,
+    templatemap',
 
   ) where
 
@@ -48,8 +48,9 @@ data TemplateMap =
 --------------------------------------------------------------------------------
 --  
 
-implTemplatemapSVG :: Bool -> TemplateMap -> String -> String
-implTemplatemapSVG clear (TemplateMap name sm) =
+
+implTemplatemap :: Bool -> TemplateMap -> String -> String
+implTemplatemap clear (TemplateMap name sm) =
     concat . map replace . split 
 
     where
@@ -83,9 +84,9 @@ implTemplatemapSVG clear (TemplateMap name sm) =
           -- ^ http://www.w3schools.com/XML/xml_syntax.asp
         
 -- | replace occurences
-templatemapSVG :: TemplateMap -> String -> String
-templatemapSVG = implTemplatemapSVG False
+templatemap :: TemplateMap -> String -> String
+templatemap = implTemplatemap False
 
 -- | replace occurences. clear placeholder if no mapping
-templatemapSVG' :: TemplateMap -> String -> String
-templatemapSVG' = implTemplatemapSVG True
+templatemap' :: TemplateMap -> String -> String
+templatemap' = implTemplatemap True

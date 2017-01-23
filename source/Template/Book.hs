@@ -40,49 +40,55 @@ data Book =
 --   success
 makeBook :: [FilePath] -> FilePath -> IO (Maybe Book)
 makeBook kits out = do
-    undefined
-    {--
     withSystemTempDirectory "rm1x-template" $ \dir -> do
+        
+        putStrLn $ "temporary directory: " ++ dir
+
 
         -- create images
-        svgs <- fmap catMaybes $ forM kits $ makeSVGPages dir
+        svgs <- fmap catMaybes $ forM kits $ \kit -> makeSVGPages kit dir
 
         -- create includes from svgs
         latexs <- forM svgs $ makeLatexInclude dir
 
 
         let mainTex = dir </> "main.tex"
-        header <- readFile =<< getDataFileName' "book/header.tex"
-        footer <- readFile =<< getDataFileName' "book/footer.tex"
+        header <- readFile =<< getDataFileName' "header.tex"
+        footer <- readFile =<< getDataFileName' "footer.tex"
 
         writeFile mainTex $ 
             header ++
             concatMap (\path -> "\\include{" ++ path ++ "}\n") latexs ++
             footer
         
+
         compileLaTeX mainTex out
 
         return $ Just $ Book "Yamaha Rm1X" out
-    --}
+
 
 -- | create latex code from 3 svg images, for inclution in main latex file
 makeLatexInclude :: FilePath -> SVGPages -> IO FilePath
 makeLatexInclude dir (SVGPages name svg0 svg1 svg2) = do
 
-    let out = dir </> name <.> ".tex"
+    let include = dir </> name <.> ".tex"
 
-    template <- readFile =<< getDataFileName' "book/include.tex"
+    template <- getDataFileName' "include.tex"
 
     -- use template to generate a new include file
-    --fileMapWords sm template out
-    return out
+    -- write include file (replace words)
+    readFile template >>= \str -> do
+        writeFile include $ templatemap (TemplateMap name sm) str
+
+    return include
 
     where 
-      sm = [ ("___name", name),
-             ("___svg0", svg0), 
-             ("___svg1", svg1), 
-             ("___svg2", svg2)
+      sm = [ ("___NAME", name),
+             ("___SVG0", svg0), 
+             ("___SVG1", svg1), 
+             ("___SVG2", svg2)
              ]
+
 
 compileLaTeX :: FilePath -> FilePath -> IO (Maybe FilePath)
 compileLaTeX input output = do
