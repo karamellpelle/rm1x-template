@@ -48,7 +48,7 @@ makeSVG kit path = do
 
     -- for now, just replace 
     readFile template >>= \str -> 
-        writeFile path $ templatemapSVG tm str
+        writeFile path $ templatemapSVG' tm str
 
 
     return $ Just $ SVG (tmName tm) path

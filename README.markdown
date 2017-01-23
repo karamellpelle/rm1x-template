@@ -19,3 +19,4 @@ Create pdf file from kits:
 
     $ rm1x-template --book kit1.txt ... kitN.txt [--output file|folder]
 
+The `--force` flag can be used for overwriting.

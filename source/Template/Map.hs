@@ -22,6 +22,7 @@ module Template.Map
     TemplateMap (..),
 
     templatemapSVG,
+    templatemapSVG',
 
   ) where
 
@@ -47,9 +48,8 @@ data TemplateMap =
 --------------------------------------------------------------------------------
 --  
 
--- | replace occurences
-templatemapSVG :: TemplateMap -> String -> String
-templatemapSVG (TemplateMap name sm) =
+implTemplatemapSVG :: Bool -> TemplateMap -> String -> String
+implTemplatemapSVG clear (TemplateMap name sm) =
     concat . map replace . split 
 
     where
@@ -63,7 +63,7 @@ templatemapSVG (TemplateMap name sm) =
                              else w
       helper ((x, x') : xs) w =
           if w == x then escape x' else helper xs w
-      helper [] w = "" -- ^ word was replacable but without mapping
+      helper [] w = if clear then "" else w         -- ^ word was replacable but without mapping
 
       isReplaceable w = 
           case w of
@@ -79,4 +79,13 @@ templatemapSVG (TemplateMap name sm) =
               '"'   -> "&quot;"
               c     -> [c]
 
+
           -- ^ http://www.w3schools.com/XML/xml_syntax.asp
+        
+-- | replace occurences
+templatemapSVG :: TemplateMap -> String -> String
+templatemapSVG = implTemplatemapSVG False
+
+-- | replace occurences. clear placeholder if no mapping
+templatemapSVG' :: TemplateMap -> String -> String
+templatemapSVG' = implTemplatemapSVG True

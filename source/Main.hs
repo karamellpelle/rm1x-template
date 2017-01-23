@@ -27,9 +27,9 @@ import Template
 mainHelp :: IO ()
 mainHelp = do
     putStrLn "Usage:"
-    putStrLn "rm1x-template --svg kit.txt [--output file|folder]"
-    putStrLn "rm1x-template --svg-pages kit.txt [--output folder]"
-    putStrLn "rm1x-template --book kit1.txt ... kitN.txt [--output file|folder]"
+    putStrLn "rm1x-template --svg kit.txt [--output file|folder] [--force]"
+    putStrLn "rm1x-template --svg-pages kit.txt [--output folder] [--force]"
+    putStrLn "rm1x-template --book kit1.txt ... kitN.txt [--output file|folder] [--force]"
 
 
 --------------------------------------------------------------------------------
@@ -162,10 +162,12 @@ assertExist path = do
 -- | make sure we don't overwrite unintentionally
 assertOverwrite :: FilePath -> IO ()
 assertOverwrite path = do
-    exist <- doesFileExist path
-    when exist $ yesno ("Overwrite " ++ path ++ "? (y/n) ")
-                 (return ()) 
-                 (putStrLn "Cancelled." >> exitSuccess)
+    force <- getFlag "force"
+    when (not force) $ do
+        exist <- doesFileExist path
+        when exist $ yesno ("Overwrite " ++ path ++ "? (y/n) ")
+                     (return ()) 
+                     (putStrLn "Cancelled." >> exitSuccess)
 
     where
       yesno str y n = do

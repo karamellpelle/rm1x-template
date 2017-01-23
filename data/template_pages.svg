@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="179.11961"
-     inkscape:cy="782.63966"
+     inkscape:cx="305.27455"
+     inkscape:cy="725.4968"
      inkscape:document-units="px"
      inkscape:current-layer="layer3"
      showgrid="false"
@@ -44,15 +44,15 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="___layer0"
+     inkscape:label="svgpages___layer0"
      inkscape:groupmode="layer"
      id="layer1"
-     style="display:inline">
+     style="display:none">
     <g
        id="g4165">
       <rect
@@ -74,12 +74,23 @@
            id="tspan4146"
            sodipodi:role="line">Layer0</tspan></text>
     </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="107.14286"
+       y="353.79077"
+       id="text4227"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="107.14286"
+         y="353.79077"
+         id="tspan4231">___C0</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer2"
-     inkscape:label="___layer1"
-     style="display:inline">
+     inkscape:label="svgpages___layer1"
+     style="display:none">
     <g
        id="g4160">
       <rect
@@ -116,8 +127,8 @@
   <g
      inkscape:groupmode="layer"
      id="layer3"
-     inkscape:label="___layer2"
-     style="display:inline">
+     inkscape:label="svgpages___layer2"
+     style="display:none">
     <g
        id="g4170">
       <rect
@@ -139,17 +150,6 @@
            x="477.14285"
            sodipodi:role="line">Layer2</tspan></text>
     </g>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="141.42856"
-       y="366.64792"
-       id="text4218"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="141.42856"
-         y="366.64792"
-         id="tspan4222">___C0</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
