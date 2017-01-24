@@ -1,0 +1,61 @@
+\documentclass[a4paper,11pt]{report}
+
+% includes
+\usepackage[a4paper]{geometry}
+%\usepackage{graphicx}       
+%\usepackage{tikz}
+\usepackage{ulem}
+\usepackage{parskip}
+%\usepackage[all]{xy}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage[utf8]{inputenc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% settings
+
+\hypersetup{pdftitle={Master thesis}}
+\hypersetup{pdfauthor={Carl Joachim Svenn}}
+\hypersetup{pdfkeywords={fields} {computable} {model theory}}
+% fancyhdr:
+\pagestyle{fancyplain}
+\renewcommand{\headrule}{}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+% vertical space for result when using package parskip
+\begingroup
+\makeatletter
+\@for\theoremstyle:=definition,remark,plain\do{%
+\expandafter\g@addto@macro\csname th@\theoremstyle\endcsname{%
+\addtolength\thm@preskip\parskip
+}%
+}
+\endgroup
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+% temporary includes
+%\includeonly{front,introduction}
+
+
+\begin{document}
+
+\setcounter{page}{0}
+
+% front page
+\thispagestyle{empty}
+\begin{center} 
+  { \LARGE \textsc{Yamaha Rm1x Sequence Remixer} } 
+\end{center}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% includes follows
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

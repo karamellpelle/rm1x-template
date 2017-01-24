@@ -42,7 +42,6 @@ makeBook :: [FilePath] -> FilePath -> IO (Maybe Book)
 makeBook kits out = do
     withSystemTempDirectory "rm1x-template" $ \dir -> do
         
-        putStrLn $ "temporary directory: " ++ dir
 
 
         -- create images
@@ -57,10 +56,10 @@ makeBook kits out = do
         footer <- readFile =<< getDataFileName' "footer.tex"
 
         writeFile mainTex $ 
-            header ++
-            concatMap (\path -> "\\include{" ++ path ++ "}\n") latexs ++
+            header                                                  ++
+            concatMap (\path -> "\\input{\"" ++ path ++ "\"}\n") latexs ++
+            "\n"                                                    ++
             footer
-        
 
         compileLaTeX mainTex out
 
@@ -71,32 +70,59 @@ makeBook kits out = do
 makeLatexInclude :: FilePath -> SVGPages -> IO FilePath
 makeLatexInclude dir (SVGPages name svg0 svg1 svg2) = do
 
-    let include = dir </> name <.> ".tex"
+    putStrLn $ "Generating include file for " ++ name ++ " ..."
+
+    -- latex don't like svgs :(
+    -- let's use inkscape to convert to .pdf files (images), and then
+    -- include these new files in the latex document!
+    --
+    -- inkscape can be installed with brew: `brew cask install inkscape`
+    -- (a package downloaded from inkscape.org may not add its command line
+    -- commands to PATH.
+    --
+    -- NOTE: there is a bug with my inkscape (0.91) that only let it use
+    --       absolute path. since 'dir' and svg's are absolute paths (as returned
+    --       from withSystemTempDirectory, this works.
+    --
+    [pdf0, pdf1, pdf2] <- forM [svg0, svg1, svg2] $ \svg -> do
+        let pdf = dropExtension svg ++ ".pdf"
+        system $ "inkscape -f " ++ svg ++ " -A " ++ pdf
+        return pdf
 
     template <- getDataFileName' "include.tex"
 
     -- use template to generate a new include file
     -- write include file (replace words)
+    let include = dir </> name <.> ".tex"
     readFile template >>= \str -> do
-        writeFile include $ templatemap (TemplateMap name sm) str
+        writeFile include $ templatemap (TemplateMap name $ makeStringMap pdf0 pdf1 pdf2) str
 
     return include
 
     where 
-      sm = [ ("___NAME", name),
-             ("___SVG0", svg0), 
-             ("___SVG1", svg1), 
-             ("___SVG2", svg2)
-             ]
+      makeStringMap p0 p1 p2 = 
+            [ ("___NAME", name),
+              ("___IMAGE0", p0), 
+              ("___IMAGE1", p1), 
+              ("___IMAGE2", p2)
+              ]
 
 
 compileLaTeX :: FilePath -> FilePath -> IO (Maybe FilePath)
-compileLaTeX input output = do
-    res <- system $ "cd " ++ (takeDirectory input)            ++ " && " ++
-                    "latex " ++ input  ++ " -o "    ++ output ++ " && " ++
-                    "latex " ++ input  ++ " -o "    ++ output              -- lets do it one more time to get references
+compileLaTeX tex pdf = do
+
+    putStrLn "Compiling LaTeX ..."
+
+    res <- system $ "cd " ++ (takeDirectory tex)        ++ " && " ++
+                    "pdflatex " ++ tex ++ " > log.txt"  ++ " && " ++
+                    "pdflatex " ++ tex ++ " > log.txt"  -- lets do it one more time to get references
     
     case res of 
-        ExitSuccess   -> return $ Just output
+        ExitSuccess   -> do
+            -- since latex is a ugly command line program, we have to
+            -- move the generated pdf from temporary folder
+            copyFile (dropExtension tex ++ ".pdf") pdf
+            return $ Just pdf
+
         ExitFailure _ -> return Nothing
 
