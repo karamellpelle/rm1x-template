@@ -1,10 +1,51 @@
+%   rm1x-template: make keymaps for Yamaha Rm1X
+%   Copyright (C) 2017  karamellpelle@hotmail.com
+%
+%   This program is free software; you can redistribute it and/or modify
+%   it under the terms of the GNU General Public License as published by
+%   the Free Software Foundation; either version 2 of the License, or
+%   (at your option) any later version.
+%
+%   This program is distributed in the hope that it will be useful,
+%   but WITHOUT ANY WARRANTY; without even the implied warranty of
+%   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%   GNU General Public License for more details.
+%
+%   You should have received a copy of the GNU General Public License along
+%   with this program; if not, write to the Free Software Foundation, Inc.,
+%   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+%
 
-\textbf{Name is ___NAME}
+% front
+\begin{center} 
+  \topskip0pt
+  \vspace*{\fill}
+  \Huge{\textbf{___NAME}}
+  \vspace*{\fill}
+\end{center}
+\newpage
 
-\texttt{pdf0: \url{___IMAGE0}}
+% set name as heading
+\chead{ \textbf{___NAME}}
 
-\texttt{pdf1: \url{___IMAGE1}}
+\begin{center}
+\phantomsection
+\includegraphics[width=\textwidth]{___IMAGE0} % image 0
+\addcontentsline{toc}{section}{___NAME}
+\newpage
 
-\texttt{pdf2: \url{___IMAGE2}}
+\includegraphics[width=\textwidth]{___IMAGE1} % image 1
+\newpage
+
+\includegraphics[width=\textwidth]{___IMAGE2} % image 2
+
+
+\end{center}
 
 \newpage
+
+% clear heading
+\chead{}
+
+
+

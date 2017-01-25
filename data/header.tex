@@ -1,8 +1,25 @@
+%   rm1x-template: make keymaps for Yamaha Rm1X
+%   Copyright (C) 2017  karamellpelle@hotmail.com
+%
+%   This program is free software; you can redistribute it and/or modify
+%   it under the terms of the GNU General Public License as published by
+%   the Free Software Foundation; either version 2 of the License, or
+%   (at your option) any later version.
+%
+%   This program is distributed in the hope that it will be useful,
+%   but WITHOUT ANY WARRANTY; without even the implied warranty of
+%   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%   GNU General Public License for more details.
+%
+%   You should have received a copy of the GNU General Public License along
+%   with this program; if not, write to the Free Software Foundation, Inc.,
+%   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+%
 \documentclass[a4paper,11pt]{report}
 
 % includes
-\usepackage[a4paper]{geometry}
-%\usepackage{graphicx}       
+\usepackage[a4paper,landscape]{geometry}
+\usepackage[pdftex]{graphicx}       
 %\usepackage{tikz}
 \usepackage{ulem}
 \usepackage{parskip}
@@ -11,15 +28,17 @@
 \usepackage{color}
 \usepackage{fancyhdr}
 \usepackage[utf8]{inputenc}
+%\usepackage{showframe}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % settings
 
-\hypersetup{pdftitle={Master thesis}}
-\hypersetup{pdfauthor={Carl Joachim Svenn}}
-\hypersetup{pdfkeywords={fields} {computable} {model theory}}
+\hypersetup{pdftitle={YamahaRm1x}}
+\hypersetup{pdfauthor={karamellpelle@hotmail.com}}
+\hypersetup{pdfkeywords={Yamaha} {Rm1x} {Drum Kit} {MIDI} {Notes}}
+%\urlstyle{same}
+
 % fancyhdr:
-\pagestyle{fancyplain}
 \renewcommand{\headrule}{}
 \lhead{}
 \chead{}
@@ -27,6 +46,7 @@
 \lfoot{}
 \cfoot{\thepage}
 \rfoot{}
+
 % vertical space for result when using package parskip
 \begingroup
 \makeatletter
@@ -37,25 +57,46 @@
 }
 \endgroup
 
+\newcommand{\void}{\mbox{}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 
-% temporary includes
-%\includeonly{front,introduction}
+\DeclareUnicodeCharacter{25C0}{x}
+\DeclareUnicodeCharacter{25B6}{x}
 
+% change to modern font
+\renewcommand{\familydefault}{\sfdefault}
 
 \begin{document}
 
 \setcounter{page}{0}
 
 % front page
-\thispagestyle{empty}
+%\thispagestyle{empty}
+\pagestyle{empty}
+
 \begin{center} 
-  { \LARGE \textsc{Yamaha Rm1x Sequence Remixer} } 
+  \vspace*{2cm}
+  \resizebox{\linewidth}{!}{\Huge{\textbf{Yamaha Rm1x}}} \\[1cm]
+  \resizebox{0.7\linewidth}{!}{\huge{\textit{SEQUENCE REMIXER}}} \\[0.1cm]
+  \url{https://github.com/karamellpelle/rm1x-template}
+  \vfill
 \end{center}
+
+% table of contents
+\tableofcontents
+\thispagestyle{empty}
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% includes follows
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% begin includes
+\pagestyle{fancy}
 
+\newgeometry{top=1.5cm,bottom=1.5cm,left=1.5cm,right=1.5cm}
+%\newgeometry{margin=0cm}
+
+% recalculate fancyhdr, see http://tex.stackexchange.com/questions/33884/fancy-headings-with-newgeometry#33886
+\fancyhfoffset[E,O]{0pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
