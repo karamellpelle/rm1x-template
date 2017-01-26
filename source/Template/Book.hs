@@ -43,7 +43,6 @@ makeBook kits out = do
     withSystemTempDirectory "rm1x-template" $ \dir -> do
         
 
-
         -- create images
         svgs <- fmap catMaybes $ forM kits $ \kit -> makeSVGPages kit dir
 
@@ -56,14 +55,21 @@ makeBook kits out = do
         footer <- readFile =<< getDataFileName' "footer.tex"
 
         writeFile mainTex $ 
-            header                                                  ++
+            (templatemap' tmLatex header)                               ++
             concatMap (\path -> "\\input{\"" ++ path ++ "\"}\n") latexs ++
-            "\n"                                                    ++
-            footer
+            "\n"                                                        ++
+            (templatemap' tmLatex footer)
 
         compileLaTeX mainTex out
 
+        --putStrLn $ "tmp dir: " ++ dir >> getLine
+
         return $ Just $ Book "Yamaha Rm1X" out
+
+    where
+      tmLatex = TemplateMap "" [ 
+                ("___VERSION", showVersion version)
+                ]
 
 
 -- | create latex code from 3 svg images, for inclution in main latex file
@@ -95,17 +101,17 @@ makeLatexInclude dir (SVGPages name svg0 svg1 svg2) = do
     -- write include file (replace words)
     let include = dir </> name <.> ".tex"
     readFile template >>= \str -> do
-        writeFile include $ templatemap (TemplateMap name $ makeStringMap pdf0 pdf1 pdf2) str
+        writeFile include $ templatemap (tmLatex pdf0 pdf1 pdf2) str
 
     return include
 
     where 
-      makeStringMap p0 p1 p2 = 
-            [ ("___NAME", name),
-              ("___IMAGE0", p0), 
-              ("___IMAGE1", p1), 
-              ("___IMAGE2", p2)
-              ]
+      tmLatex p0 p1 p2 = TemplateMap name [
+                        ("___NAME", name),
+                        ("___IMAGE0", p0), 
+                        ("___IMAGE1", p1), 
+                        ("___IMAGE2", p2)
+                        ]
 
 
 compileLaTeX :: FilePath -> FilePath -> IO (Maybe FilePath)

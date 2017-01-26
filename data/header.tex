@@ -18,7 +18,7 @@
 \documentclass[a4paper,11pt]{report}
 
 % includes
-\usepackage[a4paper,landscape]{geometry}
+\usepackage[a4paper,landscape,bottom=1.5cm]{geometry}
 \usepackage[pdftex]{graphicx}       
 %\usepackage{tikz}
 \usepackage{ulem}
@@ -44,7 +44,7 @@
 \chead{}
 \rhead{}
 \lfoot{}
-\cfoot{\thepage}
+\cfoot{\tiny{___VERSION}}
 \rfoot{}
 
 % vertical space for result when using package parskip
@@ -72,10 +72,9 @@
 
 \setcounter{page}{0}
 
-% front page
-%\thispagestyle{empty}
-\pagestyle{empty}
+\pagestyle{fancy}
 
+% front page
 \begin{center} 
   \vspace*{2cm}
   \resizebox{\linewidth}{!}{\Huge{\textbf{Yamaha Rm1x}}} \\[1cm]
@@ -86,12 +85,12 @@
 
 % table of contents
 \tableofcontents
-\thispagestyle{empty}
+\cfoot{\thepage}
+\pagestyle{fancy}
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % begin includes
-\pagestyle{fancy}
 
 \newgeometry{top=1.5cm,bottom=1.5cm,left=1.5cm,right=1.5cm}
 %\newgeometry{margin=0cm}

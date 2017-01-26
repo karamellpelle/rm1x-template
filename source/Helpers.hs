@@ -30,6 +30,8 @@ module Helpers
     module Data.Char,
     module Data.List,
     module Data.Maybe,
+    module Data.Version,
+    module Paths_rm1x_template,
 
   ) where
 
@@ -44,6 +46,7 @@ import Control.Monad
 import Data.Char
 import Data.List
 import Data.Maybe
+import Data.Version
 import Paths_rm1x_template
 
 --------------------------------------------------------------------------------
