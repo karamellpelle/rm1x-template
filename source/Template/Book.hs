@@ -68,8 +68,9 @@ makeBook kits out = do
 
     where
       tmLatex = TemplateMap "" [ 
-                ("___VERSION", showVersion version)
+                ("___VERSION", version')
                 ]
+      version' = showVersion version ++ "-" ++ gitHEADShort
 
 
 -- | create latex code from 3 svg images, for inclution in main latex file

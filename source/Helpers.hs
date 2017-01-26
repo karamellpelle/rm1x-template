@@ -32,6 +32,7 @@ module Helpers
     module Data.Maybe,
     module Data.Version,
     module Paths_rm1x_template,
+    module Git,
 
   ) where
 
@@ -48,6 +49,7 @@ import Data.List
 import Data.Maybe
 import Data.Version
 import Paths_rm1x_template
+import Git
 
 --------------------------------------------------------------------------------
 --  
