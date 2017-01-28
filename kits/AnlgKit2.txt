@@ -5,7 +5,7 @@ G-1     Reverse Roll
 G#-1    Reverse Snare      
 A-1     Snare Roll         
 A#-1    Reverse Hi-Hat     
-B-1     BDAnaSoft2L        
+B-1     BD Ana Soft 2 L        
 C0      BD Ana Soft 1 Long 
 C#0     Finger Snap        
 D0      Snare Analog 5     
@@ -18,7 +18,7 @@ G#0     HH Op Ana 2 Short
 A0      Tom Ana Clean 3    
 A#0     HH Op Ana 2        
 B0      BD Ana Soft 2 H    
-C1      BD Ana Soft1 Short 
+C1      BD Ana Soft 1 Short 
 C#1     Side Stick Ana 1   
 D1      Snare Analog 3     
 D#1     Hand Clap Ana      

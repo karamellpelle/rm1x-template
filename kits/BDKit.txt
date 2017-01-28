@@ -10,9 +10,9 @@ B0      BD Synth 1
 C1      BD Synth 2         
 C#1     BD Analog Dist     
 D1      Ripper             
-D#1     BDAnaSoft2L        
-E1      BD Ana Soft 2H     
-F1      BD Ana Soft1 Short 
+D#1     BD Ana Soft 2 L        
+E1      BD Ana Soft 2 H     
+F1      BD Ana Soft 1 Short 
 F#1     BD Ana Soft 1 Long 
 G1      BD Dry Soft        
 G#1     BD Dry             
