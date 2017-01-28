@@ -25,7 +25,7 @@ Create 1 svg file from kit:
 
     $ rm1x-template --svg kit.txt [--output file|folder]
 
-Create 3 svg files from kit, each svg in A4-format:
+Divide kit map to 3 svg files (used extensively by book):
 
     $ rm1x-template --svg-pages kit.txt [--output folder]
 

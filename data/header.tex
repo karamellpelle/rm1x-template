@@ -27,6 +27,8 @@
 \usepackage{fancyhdr}
 \usepackage[utf8]{inputenc}
 \usepackage{etoolbox}
+\usepackage{everypage}
+%\usepackage{lipsum}
 %\usepackage{showframe}
 
 
@@ -37,6 +39,21 @@
 \hypersetup{pdfauthor={karamellpelle@hotmail.com}}
 \hypersetup{pdfkeywords={Yamaha} {Rm1x} {Drum Kit} {MIDI} {Notes}}
 %\urlstyle{same}
+% jump to top of page. http://tex.stackexchange.com/a/350830/123984
+\AddEverypageHook{\raisebox{1in}[0pt][0pt]{\hypertarget{pagetop.\thepage}{}}}
+%%\makeatletter. http://tex.stackexchange.com/a/55620/123984
+%\let\orig@Hy@EveryPageAnchor\Hy@EveryPageAnchor
+%\def\Hy@EveryPageAnchor{%
+%    \begingroup
+%    \hypersetup{pdfview=Fit}%
+%    \orig@Hy@EveryPageAnchor
+%    \endgroup
+%}
+%\makeatother 
+% fancyhdr:
+\makeatletter
+\newcommand{\phantompageref}{\def\@currentHref{pagetop.\thepage}}
+\makeatother
 
 % fancyhdr:
 \renewcommand{\headrule}{}
