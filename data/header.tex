@@ -20,15 +20,15 @@
 % includes
 \usepackage[a4paper,landscape,bottom=1.5cm]{geometry}
 \usepackage[pdftex]{graphicx}       
-%\usepackage{tikz}
 \usepackage{ulem}
 \usepackage{parskip}
-%\usepackage[all]{xy}
 \usepackage{hyperref}
 \usepackage{color}
 \usepackage{fancyhdr}
 \usepackage[utf8]{inputenc}
+\usepackage{etoolbox}
 %\usepackage{showframe}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % settings
@@ -57,6 +57,12 @@
 }
 \endgroup
 
+% set (i.e. remove) spacing for table of contents
+\makeatletter
+\patchcmd{\@makechapterhead}{\vspace*{50\p@}}{}{}{}% Removes space above \chapter head
+\patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{}{}{}% Removes space above \chapter* head
+\makeatother
+
 \newcommand{\void}{\mbox{}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -69,6 +75,7 @@
 \renewcommand{\familydefault}{\sfdefault}
 
 \begin{document}
+
 
 \setcounter{page}{0}
 

@@ -26,7 +26,6 @@ import Template.Map
 import Template.File
 import Template.SVGPages
 
-
 data Book =
     Book
     {
@@ -35,12 +34,13 @@ data Book =
     }
 
 
-
 -- | make a pdf with LaTex from kit files. returns 'out' upon
 --   success
 makeBook :: [FilePath] -> FilePath -> IO (Maybe Book)
 makeBook kits out = do
     withSystemTempDirectory "rm1x-template" $ \dir -> do
+    
+        putStrLn "Creating book:"
         
 
         -- create images
@@ -49,22 +49,22 @@ makeBook kits out = do
         -- create includes from svgs
         latexs <- forM svgs $ makeLatexInclude dir
 
-
         let mainTex = dir </> "main.tex"
         header <- readFile =<< getDataFileName' "header.tex"
         footer <- readFile =<< getDataFileName' "footer.tex"
 
         writeFile mainTex $ 
-            (templatemap' tmLatex header)                               ++
+            (templatemap tmLatex header)                               ++
             concatMap (\path -> "\\input{\"" ++ path ++ "\"}\n") latexs ++
             "\n"                                                        ++
-            (templatemap' tmLatex footer)
+            (templatemap tmLatex footer)
 
-        compileLaTeX mainTex out
+        --putStrLn ("tmp dir: " ++ dir) >> getLine
 
-        --putStrLn $ "tmp dir: " ++ dir >> getLine
+        fmap (fmap (\pdf -> Book "Yamaha Rm1x" pdf)) $ compileLaTeX mainTex out
+        -- ^ TODO: copy log upon error?
 
-        return $ Just $ Book "Yamaha Rm1X" out
+
 
     where
       tmLatex = TemplateMap "" [ 
@@ -85,7 +85,7 @@ makeLatexInclude dir (SVGPages name svg0 svg1 svg2) = do
     --
     -- inkscape can be installed with brew: `brew cask install inkscape`
     -- (a package downloaded from inkscape.org may not add its command line
-    -- commands to PATH.
+    -- commands to PATH).
     --
     -- NOTE: there is a bug with my inkscape (0.91) that only let it use
     --       absolute path. since 'dir' and svg's are absolute paths (as returned
@@ -121,8 +121,8 @@ compileLaTeX tex pdf = do
     putStrLn "Compiling LaTeX ..."
 
     res <- system $ "cd " ++ (takeDirectory tex)        ++ " && " ++
-                    "pdflatex " ++ tex ++ " > log.txt"  ++ " && " ++
-                    "pdflatex " ++ tex ++ " > log.txt"  -- lets do it one more time to get references
+                    "pdflatex -interaction=nonstopmode " ++ tex ++ " > log.txt"  ++ " && " ++
+                    "pdflatex -interaction=nonstopmode " ++ tex ++ " > log.txt"  -- lets do it one more time to get references
     
     case res of 
         ExitSuccess   -> do

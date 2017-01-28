@@ -27,6 +27,7 @@ import Template
 mainHelp :: IO ()
 mainHelp = do
     putStrLn "Usage:"
+    putStrLn "rm1x-template --help"
     putStrLn "rm1x-template --svg kit.txt [--output file|folder] [--force]"
     putStrLn "rm1x-template --svg-pages kit.txt [--output folder] [--force]"
     putStrLn "rm1x-template --book kit1.txt ... kitN.txt [--output file|folder] [--force]"
