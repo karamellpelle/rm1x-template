@@ -25,6 +25,7 @@ import Helpers
 import Template.Map
 import Template.File
 import Template.SVGPages
+import Git
 
 data Book =
     Book

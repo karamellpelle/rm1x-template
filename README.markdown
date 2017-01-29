@@ -1,8 +1,6 @@
 # Yamaha Rm1x Drumkits
 
-A [pdf file](https://raw.githubusercontent.com/karamellpelle/rm1x-template/master/YamahaRm1x.pdf) with all mappings can be generated with the following command:
-
-    ./rm1x-template --book kits/AnlgKit1.txt kits/AnlgKit2.txt kits/RhBoxKit.txt kits/SynthKit.txt kits/SEKit.txt kits/PsychKit.txt kits/AcidKit.txt kits/TeknoKit.txt kits/AmbntKit.txt kits/HardKit.txt kits/HouseKit.txt kits/BreakKit.txt kits/JunglKit.txt kits/DnBKit.txt kits/BigKit.txt kits/HipHpKit.txt kits/AcoKit.txt kits/JazzKit.txt kits/BrushKit.txt kits/PercsKit.txt kits/BDKit.txt kits/HHCyKit.txt kits/SDKit.txt kits/TomKit.txt kits/SFXKit1.txt kits/SFXKit2.txt kits/Notes.txt kits/GMStandKit.txt
+A [pdf file](https://raw.githubusercontent.com/karamellpelle/rm1x-template/master/YamahaRm1x.pdf) with all mappings can be generated with the command `./makebook.sh`.
 
 Svg's for single kits can also be generated, but they are in Inkscape format and uses the `flowRoot` object. [This makes them not very compatible with other viewers.](http://stackoverflow.com/a/19391378/753850)
 But I suppose it is possible to "flatten" the generated svg files from command line by Inkscape. And you can also export them to other formats by command line.
