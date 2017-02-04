@@ -1,37 +1,73 @@
-D#0     BD Ana Tight       
-E0      BD Analog Comp     
-F0      BD Analog Deep     
-F#0     BD Ana Hard 2      
-G0      BD Ana Hard 1      
-G#0     BD Analog Blip     
-A0      BD Ana Rubber      
-A#0     BD Ana Loose       
-B0      BD Synth 1         
-C1      BD Synth 2         
-C#1     BD Analog Dist     
-D1      Ripper             
-D#1     BD Ana Soft 2 L        
-E1      BD Ana Soft 2 H     
-F1      BD Ana Soft 1 Short 
-F#1     BD Ana Soft 1 Long 
-G1      BD Dry Soft        
-G#1     BD Dry             
-A1      BD Tight           
-A#1     BD Soft            
-B1      BD Room            
-C2      BD Break 2         
-C#2     BD Break 1         
-D2      BD & HH Open H     
-D#2     BD Break 4         
-E2      BD Break 3         
-F2      BD Break 5         
-F#2     BD Break 6         
-G2      BD Break 7         
-G#2     Big Drum           
-A2      Taiko Drum         
-A#2     Surdo Open         
-B2      Feet               
-C3      BD Industrial      
-C#3     Door Slam          
-D3      Punch              
-D#3     Heart              
+E0      BD Ana Tight       
+F0      BD Analog Comp     
+F#0     BD Analog Deep     
+G0      BD Ana Hard 2      
+G#0     BD Ana Hard 1      
+A0      BD Analog Blip     
+A#0     BD Ana Rubber      
+B0      BD Ana Loose       
+C1      BD Synth 1         
+C#1     BD Synth 2         
+D1      BD Analog Dist     
+D#1     Ripper             
+E1      BD Ana Soft 2 L        
+F1      BD Ana Soft 2 H     
+F#1     BD Ana Soft 1 Short 
+G1      BD Ana Soft 1 Long 
+G#1     BD Dry Soft        
+A1      BD Dry             
+A#1     BD Tight           
+B1      BD Soft            
+C2      BD Room            
+C#2     BD Break 2         
+D2      BD Break 1         
+D#2     BD & HH Open H     
+E2      BD Break 4         
+F2      BD Break 3         
+F#2     BD Break 5         
+G2      BD Break 6         
+G#2     BD Break 7         
+A2      Big Drum           
+A#2     Taiko Drum         
+B2      Surdo Open         
+C3      Feet               
+C#3     BD Industrial      
+D3      Door Slam          
+D#3     Punch              
+E3      Heart              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

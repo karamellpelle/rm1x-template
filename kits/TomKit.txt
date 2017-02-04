@@ -1,60 +1,120 @@
-D#0     Tom Analog 1      
-E0      Tom Analog 2      
-F0      Tom Analog 3      
-F#0     Tom Analog 4      
-G0      Tom Analog 5      
-G#0     Tom Analog 6      
-A0      Tom Ana Dist 1    
-A#0     Tom Ana Dist 2    
-B0      Tom Ana Dist 3    
-C1      Tom Ana Dist 4    
-C#1     Tom Ana Dist 5    
-D1      Tom Ana Dist 6    
-D#1     Tom Synth 1       
-E1      Tom Synth 2       
-F1      Tom Synth 3       
-F#1     Tom Synth 4       
-G1      Tom Synth 5       
-G#1     Tom Synth 6       
-A1      Tom Industrial 1  
-A#1     Tom Industrial 2  
-B1      Tom Industrial 3  
-C2      Tom Industrial 4  
-C#2     Tom Industrial 5  
-D2      Tom Industrial 6  
-D#2     Tom Ana Clean 1   
-E2      Tom Ana Clean 2   
-F2      Tom Ana Clean 3   
-F#2     Tom Ana Clean 4   
-G2      Tom Ana Clean 5   
-G#2     Tom Ana Clean 6   
-A2      Tom Analog Soft 1 
-A#2     Tom Analog Soft 2 
-B2      Tom Analog Soft 3 
-C3      Tom Analog Soft 4 
-C#3     Tom Analog Soft 5 
-D3      Tom Analog Soft 6 
-D#3     Tom Hard 1        
-E3      Tom Hard 2        
-F3      Tom Hard 3        
-F#3     Tom Hard 4        
-G3      Tom Hard 5        
-G#3     Tom Hard 6        
-A3      Tom Soft 1        
-A#3     Tom Soft 2        
-B3      Tom Soft 3        
-C4      Tom Soft 4        
-C#4     Tom Soft 5        
-D4      Tom Soft 6        
-D#4     Tom Lo-Fi 1       
-E4      Tom Lo-Fi 2       
-F4      Tom Lo-Fi 3       
-F#4     Tom Lo-Fi 4       
-G4      Tom Lo-Fi 5       
-G#4     Tom Lo-Fi 6       
-A4      Tom Brush 1       
-A#4     Tom Brush 2       
-B4      Tom Brush 3       
-C5      Tom Brush 4       
-C#5     Tom Brush 5       
-D5      Tom Brush 6       
+E0      Tom Analog 1      
+F0      Tom Analog 2      
+F#0     Tom Analog 3      
+G0      Tom Analog 4      
+G#0     Tom Analog 5      
+A0      Tom Analog 6      
+A#0     Tom Ana Dist 1    
+B0      Tom Ana Dist 2    
+C1      Tom Ana Dist 3    
+C#1     Tom Ana Dist 4    
+D1      Tom Ana Dist 5    
+D#1     Tom Ana Dist 6    
+E1      Tom Synth 1       
+F1      Tom Synth 2       
+F#1     Tom Synth 3       
+G1      Tom Synth 4       
+G#1     Tom Synth 5       
+A1      Tom Synth 6       
+A#1     Tom Industrial 1  
+B1      Tom Industrial 2  
+C2      Tom Industrial 3  
+C#2     Tom Industrial 4  
+D2      Tom Industrial 5  
+D#2     Tom Industrial 6  
+E2      Tom Ana Clean 1   
+F2      Tom Ana Clean 2   
+F#2     Tom Ana Clean 3   
+G2      Tom Ana Clean 4   
+G#2     Tom Ana Clean 5   
+A2      Tom Ana Clean 6   
+A#2     Tom Analog Soft 1 
+B2      Tom Analog Soft 2 
+C3      Tom Analog Soft 3 
+C#3     Tom Analog Soft 4 
+D3      Tom Analog Soft 5 
+D#3     Tom Analog Soft 6 
+E3      Tom Hard 1        
+F3      Tom Hard 2        
+F#3     Tom Hard 3        
+G3      Tom Hard 4        
+G#3     Tom Hard 5        
+A3      Tom Hard 6        
+A#3     Tom Soft 1        
+B3      Tom Soft 2        
+C4      Tom Soft 3        
+C#4     Tom Soft 4        
+D4      Tom Soft 5        
+D#4     Tom Soft 6        
+E4      Tom Lo-Fi 1       
+F4      Tom Lo-Fi 2       
+F#4     Tom Lo-Fi 3       
+G4      Tom Lo-Fi 4       
+G#4     Tom Lo-Fi 5       
+A4      Tom Lo-Fi 6       
+A#4     Tom Brush 1       
+B4      Tom Brush 2       
+C5      Tom Brush 3       
+C#5     Tom Brush 4       
+D5      Tom Brush 5       
+D#5     Tom Brush 6       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

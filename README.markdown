@@ -5,7 +5,14 @@ A [pdf file](https://raw.githubusercontent.com/karamellpelle/rm1x-template/maste
 Svg's for single kits can also be generated, but they are in Inkscape format and uses the `flowRoot` object. [This makes them not very compatible with other viewers.](http://stackoverflow.com/a/19391378/753850)
 But I suppose it is possible to "flatten" the generated svg files from command line by Inkscape. And you can also export them to other formats by command line.
 
-## `rm1x-template`
+## Update!
+
+After making this book, I found bugs in the list book: several kits was off by one seminote. They have been corrected here. The affected kits was
+BDKit, HHCyKit, SDKit, TomKit, SFXKit1 and SFXKit2. 
+
+
+
+## rm1x-template
 
 ### Building
 
